@@ -11,6 +11,8 @@ app.disable("x-powered-by");
 app.use(cookieParser());
 app.use(token);
 
+app.use("/public", e.static("./public/"));
+
 app.get("/", (req, res) => {
     const { lang } = req.session;
 
