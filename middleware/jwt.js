@@ -23,7 +23,7 @@ export function token(req, res, next) {
 
             req.session = token;
         } catch {
-            req.session = null;
+            req.session = {id: null, lang: "es"};
         }
     }
     // Seguimos adelante

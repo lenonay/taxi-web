@@ -12,10 +12,11 @@ app.use(cookieParser());
 app.use(token);
 
 app.get("/", (req, res) => {
-    res.send("Hola");
-    console.log(req.session)
+    const { lang } = req.session;
+
+    res.sendFile("index.html", { root: `./views/${lang}` });
 });
 
 app.listen(PORT, INT, () => {
-    console.log("Server is listening on port:",INT,PORT);
+    console.log("Server is listening on port:", INT, PORT);
 })
